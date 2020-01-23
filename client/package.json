@@ -12,10 +12,11 @@
   "dependencies": {
     "react": "16.9.0",
     "react-native": "0.61.5",
-    "socket.io-client": "^2.3.0",
     "react-native-device-info": "^5.4.1",
     "react-native-modal": "^11.5.3",
-    "react-viro": "^2.17.0"
+    "react-viro": "^2.17.0",
+    "socket.io-client": "^2.3.0",
+    "uuid": "latest"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
@@ -23,8 +24,9 @@
     "@react-native-community/eslint-config": "^0.0.5",
     "@types/jest": "^24.0.24",
     "@types/react-native": "^0.60.25",
-    "@types/socket.io-client": "^1.4.32",
     "@types/react-test-renderer": "16.9.1",
+    "@types/socket.io-client": "^1.4.32",
+    "@types/uuid": "^3.4.6",
     "@typescript-eslint/eslint-plugin": "^2.12.0",
     "@typescript-eslint/parser": "^2.12.0",
     "babel-jest": "^24.9.0",

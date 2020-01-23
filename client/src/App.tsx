@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -9,6 +9,7 @@ import {
   ScrollView,
 } from 'react-native';
 import {ViroARSceneNavigator} from 'react-viro';
+import {addNote} from './context';
 import {SocketProvider} from './context/provider';
 import Game from './Game';
 import Modal from 'react-native-modal';
@@ -19,6 +20,8 @@ const App = () => {
     isModalVisible,
     showModal,
   ]);
+  const [note, setNote] = useState('');
+  const [color, setColor] = useState('');
 
   return (
     <SocketProvider>
@@ -32,18 +35,21 @@ const App = () => {
             <TextInput
               style={styles.textInput}
               multiline
+              onChangeText={setNote}
               placeholder="Your message"
               placeholderTextColor="white"
             />
             <Picker
               style={styles.picker}
               itemStyle={styles.pickerItem}
-              onValueChange={(itemValue, itemIndex) => {}}>
+              onValueChange={itemValue => setColor(itemValue)}>
               <Picker.Item label="Green" value="green" />
               <Picker.Item label="Red" value="red" />
-              <Picker.Item label="Yello" value="yellow" />
+              <Picker.Item label="Yellow" value="yellow" />
             </Picker>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => addNote(note, color)}>
               <Text style={styles.buttonText}>OK</Text>
             </TouchableOpacity>
           </View>

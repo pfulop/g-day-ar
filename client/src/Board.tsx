@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  ViroARScene,
-  ViroBox,
-  ViroMaterials,
-  ViroNode,
-  ViroText,
-} from 'react-viro';
+import {ViroBox, ViroMaterials, ViroNode, ViroText} from 'react-viro';
 import {StyleSheet} from 'react-native';
 
 const Board: React.FC = () => {
@@ -19,7 +13,7 @@ const Board: React.FC = () => {
     },
   });
   return (
-    <ViroNode position={[0, 0, 0]}>
+    <ViroNode position={[0, 0, -3]}>
       <ViroBox position={[0, 0, 0]} scale={[3, 1.5, 0]} materials={['board']} />
       <ViroNode position={[0, 0.5, 0]} scale={[0.2, 0.2, 0.2]}>
         <ViroText

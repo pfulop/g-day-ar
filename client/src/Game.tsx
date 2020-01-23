@@ -1,29 +1,17 @@
 import React from 'react';
-import {
-  ViroARScene,
-  ViroAmbientLight,
-  ViroBox,
-  ViroMaterials,
-} from 'react-viro';
+import {ViroARScene, ViroBox, ViroMaterials, ViroNode} from 'react-viro';
 
 const Game: React.FC = () => {
   return (
     <ViroARScene>
-      <ViroAmbientLight color="#aaaaaa" />
-      <ViroBox
-        // dragType="FixedToWorld"
-        // onDrag={() => {}}
-        height={1}
-        length={1}
-        width={1}
-        position={[0, 0, -1]}
-        scale={[0.1, 0.1, 0.1]}
-        materials={['green']}
-        // physicsBody={{
-        //   type: 'Dynamic',
-        //   mass: 0.0001,
-        // }}
-      />
+      <ViroNode>
+        <ViroBox
+          materials={['green']}
+          position={[0, 0, -0.5]}
+          scale={[0.5, 0.5, 0.01]}
+        />
+        <ViroBox position={[0, 0, -0.4]} scale={[0.01, 0.01, 0.01]} />
+      </ViroNode>
     </ViroARScene>
   );
 };

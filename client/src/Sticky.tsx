@@ -1,17 +1,18 @@
 import React from 'react';
 import {ViroBox, ViroMaterials, ViroNode, ViroText} from 'react-viro';
 import {StyleSheet} from 'react-native';
+import {Note} from './context/provider';
 
-const Sticky: React.FC = () => {
+const Sticky: React.FC<Note> = props => {
   return (
-    <ViroNode position={[0, 0, 0.1]}>
+    <ViroNode position={props.position}>
       <ViroBox
-        materials={['yellow']}
+        materials={[props.color]}
         position={[0, 0, 0]}
         scale={[0.2, 0.2, 0.01]}
       />
       <ViroText
-        text="Sticky not is the best note"
+        text={props.content}
         style={style.title}
         width={3}
         scale={[0.07, 0.07, 0.07]}

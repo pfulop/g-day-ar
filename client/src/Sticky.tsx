@@ -11,7 +11,7 @@ const Sticky: React.FC<Note> = props => {
       clearTimeout(timeout.current);
 
       timeout.current = setTimeout(
-        () => editNote({...props, position: [a[0], a[1], props.position[2]]}),
+        () => editNote({...props, position: a}),
         500,
       );
     },

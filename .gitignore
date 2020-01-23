@@ -1,7 +1,8 @@
 # OSX
 #
 .DS_Store
-
+client/ios
+client/ios/google_day_ar_template.xcodeproj/project.pbxproj
 # /IntelliJ
 #
 

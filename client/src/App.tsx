@@ -4,11 +4,11 @@ import {
   Text,
   StyleSheet,
   TextInput,
-  TouchableWithoutFeedback,
   Picker,
   TouchableOpacity,
 } from 'react-native';
 import {ViroARSceneNavigator} from 'react-viro';
+import {SocketProvider} from './context/provider';
 import Game from './Game';
 import Modal from 'react-native-modal';
 
@@ -20,7 +20,7 @@ const App = () => {
   ]);
 
   return (
-    <>
+    <SocketProvider>
       <ViroARSceneNavigator initialScene={{scene: Game}} autofocus hdrEnabled />
       <Modal isVisible={isModalVisible}>
         <View style={styles.flex}>
@@ -49,7 +49,7 @@ const App = () => {
       <TouchableOpacity onPress={toggleModal} style={styles.modalButton}>
         <Text style={styles.buttonText}>Add Note</Text>
       </TouchableOpacity>
-    </>
+    </SocketProvider>
   );
 };
 

@@ -10,12 +10,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "latest",
     "ip": "^1.1.5",
+    "socket.io": "latest",
     "ws": "^7.2.1"
   },
   "devDependencies": {
+    "@types/express": "^4.17.2",
     "@types/ip": "^1.1.0",
     "@types/node": "^13.1.7",
+    "@types/socket.io": "^2.1.4",
     "@types/ws": "^7.2.0",
     "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.7.5"

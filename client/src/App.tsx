@@ -6,6 +6,7 @@ import {
   TextInput,
   Picker,
   TouchableOpacity,
+  ScrollView,
 } from 'react-native';
 import {ViroARSceneNavigator} from 'react-viro';
 import {SocketProvider} from './context/provider';
@@ -23,7 +24,9 @@ const App = () => {
     <SocketProvider>
       <ViroARSceneNavigator initialScene={{scene: Game}} autofocus hdrEnabled />
       <Modal isVisible={isModalVisible}>
-        <View style={styles.flex}>
+        <ScrollView
+          style={styles.flex}
+          contentContainerStyle={styles.contentContainer}>
           <View style={styles.inner}>
             <Text style={styles.title}>Create new sticker, alstublieft!</Text>
             <TextInput
@@ -44,7 +47,7 @@ const App = () => {
               <Text style={styles.buttonText}>OK</Text>
             </TouchableOpacity>
           </View>
-        </View>
+        </ScrollView>
       </Modal>
       <TouchableOpacity onPress={toggleModal} style={styles.modalButton}>
         <Text style={styles.buttonText}>Add Note</Text>
@@ -56,6 +59,8 @@ const App = () => {
 const styles = StyleSheet.create({
   flex: {
     flex: 1,
+  },
+  contentContainer: {
     justifyContent: 'flex-start',
     alignItems: 'center',
   },

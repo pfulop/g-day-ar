@@ -18,13 +18,15 @@ const Sticky: React.FC<Note> = props => {
     [editNote, props],
   );
 
+  const textColor = props.color === 'red' ? 'white' : 'black';
+
   return (
     <ViroNode
       position={props.position}
       onDrag={onDrag}
       dragType="FixedToPlane"
       dragPlane={{
-        planePoint: [0, 0, -2.8],
+        planePoint: [0, 0, -1.8],
         planeNormal: [0, 0, 1],
         maxDistance: 3.2,
       }}>
@@ -35,7 +37,7 @@ const Sticky: React.FC<Note> = props => {
       />
       <ViroText
         text={props.content}
-        style={style.title}
+        style={[style.title, {color: textColor}]}
         width={3}
         scale={[0.07, 0.07, 0.07]}
         position={[0, 0, 0.02]}

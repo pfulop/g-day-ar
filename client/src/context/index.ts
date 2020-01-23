@@ -16,7 +16,7 @@ export const addNote = (note: string, color: string = 'green') =>
       id: uuid(),
       content: note,
       color,
-      position: [0, 0, 0.3],
+      position: [0, 0, 0.1],
     }),
   );
 

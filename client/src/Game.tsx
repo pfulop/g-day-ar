@@ -8,7 +8,7 @@ const Game: React.FC = () => {
   const {board} = useContext(SocketContext);
   return (
     <ViroARScene>
-      <ViroNode position={[0, 0, -3]}>
+      <ViroNode position={[0, 0, -2]}>
         <Board />
         {board.notes && board.notes.map(n => <Sticky key={n.id} {...n} />)}
       </ViroNode>

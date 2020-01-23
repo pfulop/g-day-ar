@@ -21,7 +21,7 @@ const App = () => {
     showModal,
   ]);
   const [note, setNote] = useState('');
-  const [color, setColor] = useState('');
+  const [color, setColor] = useState('green');
 
   return (
     <SocketProvider>
@@ -42,6 +42,7 @@ const App = () => {
             <Picker
               style={styles.picker}
               itemStyle={styles.pickerItem}
+              selectedValue={color}
               onValueChange={itemValue => setColor(itemValue)}>
               <Picker.Item label="Green" value="green" />
               <Picker.Item label="Red" value="red" />

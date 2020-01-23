@@ -4,7 +4,15 @@ import {StyleSheet} from 'react-native';
 
 const Sticky: React.FC = () => {
   return (
-    <ViroNode position={[0, 0, 0.1]}>
+    <ViroNode
+      position={[0, 0, 0.2]}
+      onDrag={a => console.log(a)}
+      dragType="FixedToPlane"
+      dragPlane={{
+        planePoint: [0, 0, -2.8],
+        planeNormal: [0, 0, 1],
+        maxDistance: 3.2,
+      }}>
       <ViroBox
         materials={['yellow']}
         position={[0, 0, 0]}

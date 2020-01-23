@@ -1,13 +1,27 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {ViroBox, ViroMaterials, ViroNode, ViroText} from 'react-viro';
 import {StyleSheet} from 'react-native';
-import {Note} from './context/provider';
+import {Note, SocketContext} from './context/provider';
 
 const Sticky: React.FC<Note> = props => {
+  const timeout = React.useRef(null as any);
+  const {editNote} = useContext(SocketContext);
+  const onDrag = React.useCallback(
+    a => {
+      clearTimeout(timeout.current);
+
+      timeout.current = setTimeout(
+        () => editNote({...props, position: [a[0], a[1], props.position[2]]}),
+        500,
+      );
+    },
+    [editNote, props],
+  );
+
   return (
     <ViroNode
       position={props.position}
-      onDrag={a => console.log(a)}
+      onDrag={onDrag}
       dragType="FixedToPlane"
       dragPlane={{
         planePoint: [0, 0, -2.8],

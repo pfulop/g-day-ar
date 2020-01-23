@@ -1,5 +1,5 @@
 import React, {createContext, useState, useEffect} from 'react';
-import {addNote, initSockets} from './index';
+import {addNote, editNote, initSockets} from './index';
 
 export type Note = {
   id: string;
@@ -13,11 +13,13 @@ export type SocketContextType = {
     notes: Note[];
   };
   addNote: (content: string, color: string) => void;
+  editNote: (note: Note) => void;
 };
 
 const defaultContext: SocketContextType = {
   board: {notes: []},
   addNote,
+  editNote,
 };
 
 export const SocketContext = createContext(defaultContext);

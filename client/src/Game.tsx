@@ -10,9 +10,7 @@ const Game: React.FC = () => {
     <ViroARScene>
       <ViroNode position={[0, 0, -3]}>
         <Board />
-        {board.notes.map(n => (
-          <Sticky {...n} />
-        ))}
+        {board.notes && board.notes.map(n => <Sticky key={n.id} {...n} />)}
       </ViroNode>
     </ViroARScene>
   );

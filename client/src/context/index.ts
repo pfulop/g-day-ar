@@ -10,8 +10,15 @@ type Message = {
 };
 export const ws = new WebSocket('ws://10.10.102.146:3000');
 
-export const addNote = (note: string, color: string) =>
-  ws.send(message('addNote', {id: uuid(), note, color, position: [0, 0, 0.1]}));
+export const addNote = (note: string, color: string = 'green') =>
+  ws.send(
+    message('addNote', {
+      id: uuid(),
+      content: note,
+      color,
+      position: [0, 0, 0.3],
+    }),
+  );
 
 export const editNote = (note: Note) => ws.send(message('editNote', note));
 

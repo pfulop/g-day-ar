@@ -49,7 +49,10 @@ const App = () => {
             </Picker>
             <TouchableOpacity
               style={styles.button}
-              onPress={() => addNote(note, color)}>
+              onPress={() => {
+                addNote(note, color);
+                toggleModal();
+              }}>
               <Text style={styles.buttonText}>OK</Text>
             </TouchableOpacity>
           </View>
